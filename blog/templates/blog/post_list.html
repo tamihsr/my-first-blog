@@ -1,0 +1,35 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Girls Code Python Anywhere</title>
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	</head>
+	<body>
+		<div>
+			<h1><a href="/">Girls Code Python Anywhere</a></h1>
+		</div>
+		<header>Programming Journal of A Girl</header>
+		<nav>
+			<ul>
+				<li><a href='#'>Home</li>
+				<li><a href='#'>Tutorial</li>
+				<li><a href='#'>About</li>
+			</ul>
+		</nav>
+		<aside></aside>
+		{% for post in posts %}
+			<div>
+				<article>
+					<p>published: {{ post.published_date }}</p>
+					<h2><a href="">{{ post.title }}</a></h2>
+					<p>{{ post.text|linebreaksbr }}</p>
+					<button>Read more >></button>
+				</article>
+			</div>
+		{% endfor% }
+		<footer></footer>
+	</body>
+</html>
